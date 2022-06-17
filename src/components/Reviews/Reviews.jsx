@@ -1,32 +1,53 @@
-import Loader from 'components/Loader/Loader';
-import { useData } from 'hooks/useData';
-import { fetchMovieReviews } from '../../service/fetchAPI';
-import s from './Reviews.module.scss';
 
-const Reviews = () => {
-  const [reviews, isLoading] = useData(fetchMovieReviews, []);
-  if (!reviews) {
-    return;
-  }
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+import ReviewsItems from 'components/ReviewsItems';
+
+import { fetchMovieReviews } from 'api/fetchAPI';
+
+function ReviewsPage() {
+  const [reviewsData, setReviewsData] = useState({
+    reviews: [],
+    loading: false,
+    error: null,
+  });
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      setReviewsData(prev => ({
+        ...prev,
+        loading: true,
+      }));
+      try {
+        const data = await fetchMovieReviews(id);
+
+        setReviewsData(prev => ({
+          ...prev,
+          loading: false,
+          reviews: data.results,
+        }));
+      } catch (err) {
+        setReviewsData(prev => ({
+          ...prev,
+          loading: false,
+          error: err.message,
+        }));
+      }
+    };
+    fetchReviews(id);
+  }, [id]);
+
+  const { reviews, loading, error } = reviewsData;
+
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <ul>
-          {reviews.map(review => {
-            const { author, content, id } = review;
-            return (
-              <li className={s.item} key={id}>
-                <p className={s.autor}>{author}</p>
-                <p className={s.review}>{content}</p>
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      {loading && <p>...Loading</p>}
+      <ReviewsItems reviews={reviews} />
+      {error && <p>{error}</p>}
     </>
   );
-};
+}
 
-export default Reviews;
+export default ReviewsPage;

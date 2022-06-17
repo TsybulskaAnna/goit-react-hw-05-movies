@@ -1,0 +1,16 @@
+.search {
+  margin: 30px;
+  text-align: center;
+}
+.input {
+  padding: 10px;
+  background-color: rgb(209, 208, 239);
+  border: 2px solid rgba(19, 114, 192, 0.2);
+}
+.button {
+  padding: 10px;
+  background-color: rgb(209, 208, 239);
+  border: 2px solid rgba(19, 114, 192, 0.2);
+  color: rgb(43, 8, 133);
+  margin: 5px;
+}

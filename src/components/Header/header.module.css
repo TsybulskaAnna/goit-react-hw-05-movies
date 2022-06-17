@@ -1,0 +1,29 @@
+.header {
+    background-color: rgb(217, 218, 240);
+    border-bottom: 1px solid rgb(209, 208, 239);
+    box-shadow: 0px 0px 10px 8px rgba(19, 114, 192, 0.2);
+   
+  }
+  
+  .navlist {
+    display: flex;
+   
+  }
+  
+  .navlist li {
+    padding: 10px 15px;
+    list-style-type: none;
+  }
+  
+  .link {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+   
+  }
+  
+  .active.link {
+    color: rgb(43, 8, 133);
+    border: 1px solid;
+    padding: 5px;
+  }
