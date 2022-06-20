@@ -7,8 +7,8 @@ import {
   Outlet,
 } from 'react-router-dom';
 
-import { fetchMovieID } from 'api/fetchAPI';
-import { IMG_URL } from 'api/fetchAPI';
+import { fetchMovieID, IMG_URL } from 'api/fetchAPI';
+
 
 import s from './movieDetailsPage.module.css';
 
