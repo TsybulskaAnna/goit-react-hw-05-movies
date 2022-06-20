@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 
 import { fetchMovieID } from 'api/fetchAPI';
+import { IMG_URL } from 'api/fetchAPI';
 
 import s from './movieDetailsPage.module.css';
 
@@ -18,7 +19,7 @@ const MovieDetailsPage = () => {
     error: null,
   });
   const { id } = useParams();
-  const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+  /* const IMG_URL = 'https://image.tmdb.org/t/p/w500'; */
 
   const navigate = useNavigate();
   const location = useLocation();

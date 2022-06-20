@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 const Header = lazy(() => import('./components/Header/Header'));
-const Cast = lazy(() => import('./components/Cast/Cast'));
+const Cast = lazy(() => import('./pages/Cast/Cast'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
-const Reviews = lazy(() => import('./components/Reviews/Reviews'));
+const Reviews = lazy(() => import('./pages/Reviews/Reviews'));
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetailsPage'));
 

@@ -7,6 +7,8 @@ const api = axios.create({
   },
 });
 
+export const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+
 export const fetchTrending = async () => {
   const { data } = await api.get('/trending/all/day', {
     parans: {
@@ -35,5 +37,3 @@ export const fetchMovieCast = async id => {
   const { data } = await api.get(`/movie/${id}/credits`);
   return data;
 };
-
-

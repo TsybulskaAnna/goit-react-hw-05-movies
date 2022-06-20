@@ -2,7 +2,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import ReviewsItems from 'components/ReviewsItems';
+import ReviewsItems from 'pages/ReviewsItems';
 
 import { fetchMovieReviews } from 'api/fetchAPI';
 

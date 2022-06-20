@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import CastItems from 'components/CastItems';
+import CastItems from 'pages/CastItems';
 import { fetchMovieCast } from 'api/fetchAPI';
 
 function Cast() {
